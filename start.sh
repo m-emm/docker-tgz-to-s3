@@ -11,4 +11,4 @@ echo "access_key=$ACCESS_KEY" >> /root/.s3cfg
 echo "secret_key=$SECRET_KEY" >> /root/.s3cfg
 TMP_FILENAME=/tmp/${FILEPREFIX}${TIMESTAMP}${FILESUFFIX}
 tar cvfz ${TMP_FILENAME} ${DATA_PATH}
-exec s3cmd put --mime-type application/gzip --verbose "$FILENAME" "$S3_PATH"
+exec s3cmd put --mime-type application/gzip --verbose "$TMP_FILENAME" "$S3_PATH"
